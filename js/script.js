@@ -620,6 +620,11 @@ g.Snake.prototype.update = function() {
     if( this.parentState.grid.get( this.tiles[ 0 ].col, this.tiles[ 0 ].row ) == 'snake' ) {
       this.deathFlag = 1;
       clearTimeout( this.foodCreateTimeout );
+      sweetAlert("Death...", "You have died!", "error");
+      swal({   
+        title: "You died!",   
+        text: "Too bad...",   
+        imageUrl: "images/skull-bones.png" });
     }
 
     // check eating of food
